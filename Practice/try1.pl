@@ -42,17 +42,31 @@ female(pammy).
 female(perry).
 female(daya).
 
+%spouse fact
+spouse(bob,luna).
+spouse(pam,jenny).
+spouse(tom,perry).
+spouse(jack,dua).
+spouse(pammy,roch).
+
+%spouse rule
+spouse(X,Y):-
+	spouse(Y,X).
+
 %husband rule
 husband(X,Y):-
-	parent(X,Z),
+	/*parent(X,Z),
 	parent(Y,Z),
-	male(X).
+	male(X),
+	X\=Y.*/
+	wife(Y,X).
 
 %wife rule
 wife(X,Y):-
 	parent(X,Z),
 	parent(Y,Z),
 	female(X).
+	%husband(Y,X).
 
 %child rule
 child(X,Y):-
@@ -60,19 +74,19 @@ child(X,Y):-
 
 %son rule
 son(X,Y):-
-	parent(Y,X)
+	parent(Y,X),
 	male(X).
 
 %daughter rule
 daughter(X,Y):-
-	parent(Y,X)
+	parent(Y,X),
 	female(Y).
 
-%rule father
+%father rule
 father(X,Y):-
 	parent(X,Y),male(X).
 
-%rule mother
+%mother rule
 mother(X,Y):-
 	parent(X,Y),female(X).
 
