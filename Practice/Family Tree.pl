@@ -125,6 +125,12 @@ granddaughter(X,Y):-
 	female(X).
 
 %Ancestor rule
+ancestor(X,Z):-
+	parent(X,Y).
+
+ancestor(X,Z):-
+	parent(X,Y),
+	ancestor(Y,Z).
 
 %Sibling rule
 sibling(X,Y):-
@@ -161,10 +167,22 @@ aunt(X,Y):-
 	female(X).
 
 %Nephew rule
+nephew(X,Y):-
+	sibling(Z,Y),
+	parent(Z,X),
+	male(X).
 
 %Niece rule
+niece(X,Y):-
+	sibling(Z,Y),
+	parent(Z,X),
+	female(X).
 
 %Cousin rule
+cousin(X,Y):-
+	parent(Z,X),
+	parent(W,Y),
+	sibling(Z,W).
 
 
 
