@@ -81,7 +81,7 @@ son(X,Y):-
 %daughter rule
 daughter(X,Y):-
 	parent(Y,X),
-	female(Y).
+	female(X).
 
 %father rule
 father(X,Y):-
@@ -126,7 +126,7 @@ granddaughter(X,Y):-
 
 %Ancestor rule
 ancestor(X,Z):-
-	parent(X,Y).
+	parent(X,Z).
 
 ancestor(X,Z):-
 	parent(X,Y),
