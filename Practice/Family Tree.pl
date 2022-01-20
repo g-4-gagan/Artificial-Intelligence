@@ -159,12 +159,26 @@ uncle(X,Y):-
 	X\=Z,
 	male(X).
 
+uncle(X,Y):-
+	parent(Z,Y),
+	sibling(W,Z),
+	W\=Z,
+	female(W),
+	husband(X,W).
+
 %Aunt rule
 aunt(X,Y):-
 	parent(Z,Y),
 	sibling(X,Z),
 	X\=Z,
 	female(X).
+
+aunt(X,Y):-
+	parent(Z,Y),
+	sibling(W,Z),
+	W\=Z,
+	male(W),
+	wife(X,W).
 
 %Nephew rule
 nephew(X,Y):-
