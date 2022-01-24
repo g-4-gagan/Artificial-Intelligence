@@ -13,3 +13,12 @@ max(X,Y,M):-
 	Y>=X,
 	M=Y.
 
+/*Practical 3*/
+
+factorial(0,F) :-
+    Result is 1.
+factorial(N,F) :-
+    N > 0,
+    N1 is N-1,
+    fact1(N1,Result1),
+    Result is Result1*N.
