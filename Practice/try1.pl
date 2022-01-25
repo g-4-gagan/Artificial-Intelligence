@@ -7,3 +7,15 @@ max(X,Y,Z) :-
     -> Z = Y
     ;  Z = X
      ).
+
+%lists in prolog
+
+%member of list
+member(X,[X|T]).
+member(X,[H|T]):-member(X,T).
+
+%list concatenation
+conc([],L,L).
+conc([X|L1],L2,[X|L3]):-
+	conc(L1,L2,L3).
+
