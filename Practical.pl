@@ -13,12 +13,24 @@ max(X,Y,M):-
 	Y>=X,
 	M=Y.
 
-/*Practical 3*/
+/*Practical 3
+Write a program in PROLOG to implement factorial (N, F) where F represents thefactorial of a number N.*/
 
-factorial(0,F) :-
-    Result is 1.
+factorial(0,1).
 factorial(N,F) :-
     N > 0,
     N1 is N-1,
-    fact1(N1,Result1),
-    Result is Result1*N.
+    factorial(N1,Result1),
+    F is Result1*N.
+
+/*Practical 4
+Write a program in PROLOG to implement generate_fib(N,T) where T represents theNth term of the fibonacci series.*/
+generate_fib(1,0).
+generate_fib(2,1).
+generate_fib(N,T):-
+	N1 is N-1,
+	generate_fib(N1,T1),
+	N2 is N-2,
+	generate_fib(N2,T2),
+	T is T1+T2.
+
