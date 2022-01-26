@@ -15,7 +15,6 @@ max(X,Y,M):-
 
 /*Practical 3
 Write a program in PROLOG to implement factorial (N, F) where F represents thefactorial of a number N.*/
-
 factorial(0,1).
 factorial(N,F) :-
     N > 0,
@@ -34,3 +33,11 @@ generate_fib(N,T):-
 	generate_fib(N2,T2),
 	T is T1+T2.
 
+/*Practical 5
+Write a Prolog program to implement GCD of two numbers.*/
+gcd(0, X, X):- 
+	X > 0, !.
+gcd(X, Y, R):- 
+	X >= Y, X1 is X-Y, gcd(X1,Y,R).
+gcd(X, Y, R):- 
+	X < Y, X1 is Y-X, gcd(X1,X,R).
