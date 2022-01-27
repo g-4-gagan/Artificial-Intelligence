@@ -41,3 +41,14 @@ gcd(X, Y, R):-
 	X >= Y, X1 is X-Y, gcd(X1,Y,R).
 gcd(X, Y, R):- 
 	X < Y, X1 is Y-X, gcd(X1,X,R).
+
+
+/*Practical 6
+Write a Prolog program to implement power (Num,Pow, Ans) : where Num is raised to the power Pow to get Ans.*/
+power(_,0,1).
+power(Num,Pow,Ans) :- Pow1 is Pow - 1,
+              pow(Num,Pow1,Ans1), Ans is Ans1*Num.
+
+/*you can also simply use*/
+power2(Num,Pow,Ans) :- Ans is Num**Pow.
+
