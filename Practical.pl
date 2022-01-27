@@ -52,3 +52,7 @@ power(Num,Pow,Ans) :- Pow1 is Pow - 1,
 /*you can also simply use*/
 power2(Num,Pow,Ans) :- Ans is Num**Pow.
 
+/*Practical 7
+Prolog program to implement multi (N1, N2, R) : where N1 and N2 denotes the numbers to be multiplied and R represents the result.*/
+multi(N1 ,N2, R) :-
+	R is N1*N2.
