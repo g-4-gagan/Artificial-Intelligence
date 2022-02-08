@@ -19,3 +19,9 @@ conc([],L,L).
 conc([X|L1],L2,[X|L3]):-
 	conc(L1,L2,L3).
 
+%length of list
+length_list([],0).
+length_list([_|T],N):-
+	length_list(T,N1),
+	N is N1+1.
+
