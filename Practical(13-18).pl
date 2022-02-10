@@ -13,3 +13,12 @@ nth_element(K,[_|L],X):-
 	nth_element(K1,L,X),
 	K is K1+1.
 
+/*Practical 15
+Write a Prolog program to implement maxlist(L, M) so that M is the maximum number in the list.*/
+maxlist([X],X).
+maxlist([H|T],M):- 
+	maxlist(T,M1), 
+	H<M1 -> M is M1;
+	M is H.
+
+
