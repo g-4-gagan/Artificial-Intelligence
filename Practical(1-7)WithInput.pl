@@ -73,4 +73,21 @@ fibonacci:-
 	generate_fib(X,F),
 	write("The number at "),write(X),
 	write(" in fibonacci series is: "),write(F),!.
+
+/*Practical 5
+Write a Prolog program to implement GCD of two numbers.*/
+gcd(0, X, X):- 
+	X > 0, !.
+gcd(X, Y, R):- 
+	X >= Y, X1 is X-Y, gcd(X1,Y,R).
+gcd(X, Y, R):- 
+	X < Y, X1 is Y-X, gcd(X1,X,R).
+gcd:-
+	write("Enter first number: "),
+	read(X),
+	write("Enter second number: "),
+	read(Y),
+	gcd(X,Y,F),
+	write("GCD of "),write(X),write(" and "),
+	write(Y),write(" is: "),write(F),!.
 	
