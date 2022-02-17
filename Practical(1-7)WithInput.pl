@@ -106,3 +106,15 @@ power:-
 	write("The result of "),write(X),
 	write(" to the power "),write(Y),
 	write(" is: "),write(F),!.
+
+/*Practical 7
+Prolog program to implement multi (N1, N2, R) : where N1 and N2 denotes the numbers to be multiplied and R represents the result.*/
+multi:-
+	write("Enter first Number: "),
+	read(X),
+	write("Enter second Number: "),
+	read(Y),
+	R is X*Y,
+	write("Product of "),write(X),
+	write(" and "),write(Y),
+	write(" is: "),write(R),!.
