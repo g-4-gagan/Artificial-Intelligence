@@ -91,3 +91,18 @@ gcd:-
 	write("GCD of "),write(X),write(" and "),
 	write(Y),write(" is: "),write(F),!.
 	
+
+/*Practical 6
+Write a Prolog program to implement power (Num,Pow, Ans) : where Num is raised to the power Pow to get Ans.*/
+power(_,0,1).
+power(Num,Pow,Ans) :- Pow1 is Pow - 1,
+              pow(Num,Pow1,Ans1), Ans is Ans1*Num.
+power:-
+	write("Enter the base: "),
+	read(X),
+	write("Enter the exponent: "),
+	read(Y),
+	power(X,Y,F),
+	write("The result of "),write(X),
+	write(" to the power "),write(Y),
+	write(" is: "),write(F),!.
