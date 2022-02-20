@@ -26,3 +26,26 @@ concatenate:-
 	conc(L1,L2,L3),
 	write("The concatenated list is: "),
 	write(L3),!.
+
+/*Practical 10
+Write a Prolog program to implement reverse (L, R) where List L is original and List R is reversed list.*/
+reverse([],[]).
+reverse([X|L1],L2):-
+	reverse(L1,L3),
+	conc(L3,[X],L2).
+reverse:-
+	write("Enter the list to be reversed: "),
+	read(L1),
+	reverse(L1,L2),
+	write("Reversed list is: "),
+	write(L2),!.
+
+/*Practical 11
+Write a program in PROLOG to implement palindrome (L) which checks whether a list L is a palindrome or not.*/
+palindrome:-
+	write("Enter the list to check palindrome: "),
+	read(L),
+	(reverse(L,L)->
+	write("The entered list is palindrome");
+	write("The entered list is not palindrome")),!.
+
