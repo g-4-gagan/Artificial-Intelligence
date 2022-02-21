@@ -49,3 +49,18 @@ palindrome:-
 	write("The entered list is palindrome");
 	write("The entered list is not palindrome")),!.
 
+/*Practical 12
+Write a Prolog program to implement sumlist(L, S) so that S is the sum of a given list L.*/
+sumlist([],0).
+sumlist([X|L1],S):-
+	sumlist(L1,S1),
+	S is S1+X.
+sumlist:-
+	write("Enter the list for sum up: "),
+	read(L),
+	sumlist(L,S),
+	write("The sum of each element of list is: "),
+	write(S),!.
+
+
+
